@@ -39,7 +39,7 @@
     <p>We're ready to bring your brand to life. Use the form below to get in touch or reach us directly at:</p>
 
     <div style="display: flex; gap: 1em; flex-wrap: wrap; align-items: center; margin-bottom: 2em;">
-      <a href="mailto:info@scalesedge.com" class="button" id="email-now-button">Email Now</a>
+      <a href="mailto:info@scalesedge.com" class="button">Email Now</a>
       <button class="button" onclick="copyEmail()">Copy Email</button>
       <span id="copy-confirmation" style="display: none; color: #00cc66; font-weight: 500;">Copied!</span>
     </div>
@@ -70,11 +70,11 @@
       });
     }
 
-    // Form submission and confirmation
-    const form = document.getElementById('contact-form');
-    const status = document.getElementById('form-status');
+    // Confirmation message on form submit
+    const form = document.getElementById("contact-form");
+    const status = document.getElementById("form-status");
 
-    form.addEventListener('submit', async function(event) {
+    form.addEventListener("submit", async function(event) {
       event.preventDefault();
       const data = new FormData(form);
       const response = await fetch(form.action, {

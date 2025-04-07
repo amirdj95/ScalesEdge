@@ -51,7 +51,7 @@ body {
   border-radius: 2px;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 880px) {
   .navbar ul {
     display: none;
     flex-direction: column;

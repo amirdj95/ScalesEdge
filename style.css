@@ -52,7 +52,7 @@ body {
 }
 
 @media (max-width: 880px) {
-  .navbar ul {
+  .dropdown-menu {
     display: none;
     flex-direction: column;
     background: #111;
@@ -63,9 +63,19 @@ body {
     padding: 1em 0;
   }
 
-  .navbar ul.active {
+  .dropdown-menu.show {
     display: flex;
   }
+
+  .menu-toggle {
+    display: flex;
+  }
+
+  .cta {
+    display: none;
+  }
+}
+
 
   .menu-toggle {
     display: flex;

@@ -1,48 +1,60 @@
 <!DOCTYPE html>
-
 <html lang="en">
 <head>
-<meta charset="utf-8"/>
-<title>Contact - ScalesEdge</title>
-<link href="style.css" rel="stylesheet"/>
+  <meta charset="utf-8"/>
+  <title>Contact - ScalesEdge</title>
+  <link href="style.css" rel="stylesheet"/>
 </head>
 <body>
-<header class="navbar">
-<div class="logo">
-<span class="logo-red">Scales<span class="arrow-up">↑</span></span><span class="logo-blue">Edge</span>
-</div>
-<div class="menu-toggle" id="menu-toggle">
-<div></div><div></div><div></div>
-</div>
-<ul class="dropdown-menu" id="dropdown-menu">
-<li><a href="index.html">Home</a></li>
-<li><a href="about.html">About</a></li>
-<li><a href="services.html">Services</a></li>
-<li><a href="contact.html">Contact</a></li>
-</ul>
-</header>
-<div class="menu-toggle">
-<div></div><div></div><div></div>
-</div>
-<div class="menu-toggle">
-<div></div>
-<div></div>
-<div></div>
-</div>
-<nav>
-</nav>
-<section class="content">
-<h2>Reach Out</h2>
-<p>We're ready to bring your brand to life. Use the form below to get in touch.</p>
-<form>
-<input placeholder="Your Name" required="" type="text"/>
-<input placeholder="Your Email" required="" type="email"/>
-<textarea placeholder="What are you looking to build or grow?" required="" rows="5"></textarea>
-<button type="submit">Send Message</button>
-</form>
-</section>
+  <header class="navbar">
+    <div class="logo">
+      <span class="logo-red">Scales<span class="arrow-up">↑</span></span><span class="logo-blue">Edge</span>
+    </div>
+    <div class="menu-toggle" id="menu-toggle">
+      <div></div><div></div><div></div>
+    </div>
+    <ul class="dropdown-menu" id="dropdown-menu">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </header>
+
+  <section class="content">
+    <h2>Reach Out</h2>
+    <p>We're ready to bring your brand to life. Use the form below to get in touch or reach us directly at:</p>
+
+    <div style="display: flex; gap: 1em; flex-wrap: wrap; align-items: center; margin-bottom: 2em;">
+      <a href="mailto:info@scalesedge.com" class="button">Email Now</a>
+      <button class="button" onclick="copyEmail()">Copy Email</button>
+      <span id="copy-confirmation" style="display: none; color: #00cc66; font-weight: 500;">Copied!</span>
+    </div>
+
+    <form>
+      <input placeholder="Your Name" required type="text"/>
+      <input placeholder="Your Email" required type="email"/>
+      <textarea placeholder="What are you looking to build or grow?" required rows="5"></textarea>
+      <button type="submit">Send Message</button>
+    </form>
+  </section>
+
   <footer>
-<p>© 2025 ScalesEdge. All rights reserved.</p>
-</footer>
-<script src="script.js"></script></body>
+    <p>© 2025 ScalesEdge. All rights reserved.</p>
+  </footer>
+
+  <script>
+    function copyEmail() {
+      const email = "info@scalesedge.com";
+      navigator.clipboard.writeText(email).then(() => {
+        const confirmation = document.getElementById("copy-confirmation");
+        confirmation.style.display = "inline";
+        setTimeout(() => {
+          confirmation.style.display = "none";
+        }, 2000);
+      });
+    }
+  </script>
+  <script src="script.js"></script>
+</body>
 </html>

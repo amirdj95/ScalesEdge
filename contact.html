@@ -4,6 +4,18 @@
   <meta charset="utf-8"/>
   <title>Contact - ScalesEdge</title>
   <link href="style.css" rel="stylesheet"/>
+  <style>
+    #form-status {
+      display: none;
+      margin-top: 1em;
+      color: #00cc66;
+      font-weight: 600;
+      background: #e6f8f0;
+      padding: 1em;
+      border-radius: 8px;
+      text-align: center;
+    }
+  </style>
 </head>
 <body>
   <header class="navbar">
@@ -31,12 +43,14 @@
       <span id="copy-confirmation" style="display: none; color: #00cc66; font-weight: 500;">Copied!</span>
     </div>
 
-    <form>
-      <input placeholder="Your Name" required type="text"/>
-      <input placeholder="Your Email" required type="email"/>
-      <textarea placeholder="What are you looking to build or grow?" required rows="5"></textarea>
+    <form id="contact-form" action="https://formspree.io/f/xzzekraz" method="POST">
+      <input name="name" placeholder="Your Name" required type="text"/>
+      <input name="email" placeholder="Your Email" required type="email"/>
+      <textarea name="message" placeholder="What are you looking to build or grow?" required rows="5"></textarea>
       <button type="submit">Send Message</button>
     </form>
+
+    <div id="form-status">Thanks for reaching out! We'll get back to you shortly.</div>
   </section>
 
   <footer>
@@ -54,6 +68,30 @@
         }, 2000);
       });
     }
+
+    // Confirmation message on form submit
+    const form = document.getElementById("contact-form");
+    const status = document.getElementById("form-status");
+
+    form.addEventListener("submit", async function(event) {
+      event.preventDefault();
+      const data = new FormData(form);
+      const response = await fetch(form.action, {
+        method: form.method,
+        body: data,
+        headers: {
+          'Accept': 'application/json'
+        }
+      });
+
+      if (response.ok) {
+        form.reset();
+        status.style.display = "block";
+        setTimeout(() => {
+          status.style.display = "none";
+        }, 4000);
+      }
+    });
   </script>
   <script src="script.js"></script>
 </body>

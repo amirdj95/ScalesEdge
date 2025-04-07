@@ -50,7 +50,6 @@ body {
   background: white;
   border-radius: 2px;
 }
-
 @media (max-width: 880px) {
   .dropdown-menu {
     display: none;
@@ -66,16 +65,6 @@ body {
   .dropdown-menu.show {
     display: flex;
   }
-
-  .menu-toggle {
-    display: flex;
-  }
-
-  .cta {
-    display: none;
-  }
-}
-
 
   .menu-toggle {
     display: flex;

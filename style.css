@@ -1,31 +1,47 @@
 
+:root {
+  --primary-color: #00cc66;
+  --primary-hover: #008f4f;
+  --dark-bg: #111;
+  --text-color: #333;
+  --light-bg: #fff;
+  --accent-bg: #2a2a2a;
+  --gradient-start: #004d26;
+  --gradient-end: #1a8f5c;
+  --border-color: #ccc;
+  --spacing-xs: 0.5em;
+  --spacing-sm: 1em;
+  --spacing-md: 2em;
+  --spacing-lg: 4em;
+}
+
 body {
   margin: 0;
   font-family: 'Segoe UI', sans-serif;
-  background: #fff;
-  color: #333;
+  background: var(--light-bg);
+  color: var(--text-color);
 }
 
 .navbar {
-  background: #111;
+  background: var(--dark-bg);
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1em 2em;
+  padding: var(--spacing-sm) var(--spacing-md);
   position: relative;
 }
 
 .navbar ul {
   list-style: none;
   display: flex;
-  gap: 1em;
+  gap: var(--spacing-sm);
   padding: 0;
   margin: 0;
 }
 
 .navbar li a {
-  background-color: #2a2a2a;
-  padding: 0.5em 1em;
+  background-color: var(--accent-bg);
+  padding: var(--spacing-xs) var(--spacing-sm);
   border-radius: 25px;
   transition: background 0.3s, transform 0.3s;
   color: white;
@@ -33,7 +49,7 @@ body {
 }
 
 .navbar li a:hover {
-  background-color: #00cc66;
+  background-color: var(--primary-color);
   transform: scale(1.05);
 }
 
@@ -54,12 +70,12 @@ body {
   .dropdown-menu {
     display: none;
     flex-direction: column;
-    background: #111;
+    background: var(--dark-bg);
     position: absolute;
     top: 100%;
     right: 0;
     width: 100%;
-    padding: 1em 0;
+    padding: var(--spacing-sm) 0;
   }
 
   .dropdown-menu.show {
@@ -76,7 +92,7 @@ body {
 }
 
 .logo-red {
-  color: #00cc66;
+  color: var(--primary-color);
   font-weight: bold;
 }
 .logo-blue {
@@ -90,8 +106,8 @@ body {
 
 .hero {
   text-align: center;
-  padding: 4em 2em;
-  background: linear-gradient(to right, #004d26, #1a8f5c);
+  padding: var(--spacing-lg) var(--spacing-md);
+  background: linear-gradient(to right, var(--gradient-start), var(--gradient-end));
   color: white;
 }
 
@@ -99,13 +115,13 @@ body {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  padding: 2em;
+  padding: var(--spacing-md);
 }
 
 .card {
   background: white;
   border-radius: 10px;
-  margin: 1em;
+  margin: var(--spacing-sm);
   padding: 1.5em;
   box-shadow: 0 0 15px rgba(0,0,0,0.1);
   flex: 1 1 300px;
@@ -114,18 +130,18 @@ body {
 
 .card:hover {
   transform: scale(1.05);
-  border: 1px solid #00cc66;
+  border: 1px solid var(--primary-color);
 }
 
 footer {
   text-align: center;
-  padding: 2em;
-  background: #111;
+  padding: var(--spacing-md);
+  background: var(--dark-bg);
   color: white;
 }
 
 .content {
-  padding: 2em;
+  padding: var(--spacing-md);
   max-width: 800px;
   margin: auto;
 }
@@ -133,29 +149,29 @@ footer {
 form {
   display: flex;
   flex-direction: column;
-  gap: 1em;
+  gap: var(--spacing-sm);
 }
 
 input, textarea, button {
-  padding: 1em;
-  border: 1px solid #ccc;
+  padding: var(--spacing-sm);
+  border: 1px solid var(--border-color);
   border-radius: 5px;
 }
 
 .button, .cta, button {
-  background: #00cc66;
+  background: var(--primary-color);
   color: white;
-  padding: 1em 2em;
+  padding: var(--spacing-sm) var(--spacing-md);
   border-radius: 5px;
   text-decoration: none;
-  margin-top: 1em;
+  margin-top: var(--spacing-sm);
   display: inline-block;
   transition: background 0.3s;
   border: none;
 }
 
 .button:hover, .cta:hover, button:hover {
-  background: #008f4f;
+  background: var(--primary-hover);
 }
 
 .menu-toggle {
@@ -176,10 +192,10 @@ input, textarea, button {
 .dropdown-menu {
   position: absolute;
   top: 100%;
-  right: 2em;
-  background-color: #111;
+  right: var(--spacing-md);
+  background-color: var(--dark-bg);
   border-radius: 10px;
-  padding: 1em;
+  padding: var(--spacing-sm);
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
   transform: translateY(-10px);
   opacity: 0;
@@ -198,13 +214,13 @@ input, textarea, button {
 }
 
 .dropdown-menu li {
-  margin: 0.5em 0;
+  margin: var(--spacing-xs) 0;
 }
 
 .dropdown-menu li a {
-  background: #2a2a2a;
+  background: var(--accent-bg);
   color: white;
-  padding: 0.7em 1em;
+  padding: 0.7em var(--spacing-sm);
   border-radius: 25px;
   text-align: center;
   text-decoration: none;
@@ -212,7 +228,7 @@ input, textarea, button {
 }
 
 .dropdown-menu li a:hover {
-  background: #00cc66;
+  background: var(--primary-color);
 }
 .card img {
   width: 100%;
@@ -220,14 +236,14 @@ input, textarea, button {
   max-height: 250px;
   object-fit: contain;
   border-radius: 8px;
-  margin-bottom: 1em;
+  margin-bottom: var(--spacing-sm);
 }
 .image-gallery {
   display: flex;
   justify-content: center;
   gap: 20px;
   flex-wrap: wrap;
-  margin-top: 2em;
+  margin-top: var(--spacing-md);
 }
 
 .image-gallery img {

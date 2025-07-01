@@ -1,4 +1,12 @@
 document.addEventListener('DOMContentLoaded', () => {
+  // Highlight active navigation link
+  const currentPath = window.location.pathname.split('/').pop() || 'index.html';
+  document.querySelectorAll('.navbar a, .dropdown-menu a').forEach(link => {
+    if (link.getAttribute('href') === currentPath) {
+      link.classList.add('active');
+    }
+  });
+
   // Dropdown Menu Toggle
   const toggle = document.getElementById('menu-toggle');
   const dropdown = document.getElementById('dropdown-menu');

@@ -37,6 +37,12 @@ body {
   transform: scale(1.05);
 }
 
+.navbar li a.active,
+.dropdown-menu li a.active {
+  font-weight: bold;
+  text-decoration: underline;
+}
+
 .menu-toggle {
   display: none;
   flex-direction: column;

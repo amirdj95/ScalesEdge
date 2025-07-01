@@ -1,10 +1,42 @@
 document.addEventListener('DOMContentLoaded', () => {
-  // Dropdown Menu Toggle
+  // Dropdown Menu Toggle with accessibility support
   const toggle = document.getElementById('menu-toggle');
   const dropdown = document.getElementById('dropdown-menu');
-  
-  toggle.addEventListener('click', () => {
-    dropdown.classList.toggle('show');
+
+  function closeMenu() {
+    dropdown.classList.remove('show');
+    toggle.setAttribute('aria-expanded', 'false');
+  }
+
+  function toggleMenu() {
+    const expanded = toggle.getAttribute('aria-expanded') === 'true';
+    if (expanded) {
+      closeMenu();
+    } else {
+      dropdown.classList.add('show');
+      toggle.setAttribute('aria-expanded', 'true');
+    }
+  }
+
+  toggle.addEventListener('click', toggleMenu);
+  toggle.addEventListener('keydown', (e) => {
+    if (e.key === 'Enter' || e.key === ' ') {
+      e.preventDefault();
+      toggleMenu();
+    }
+  });
+
+  document.addEventListener('click', (e) => {
+    if (!dropdown.contains(e.target) && !toggle.contains(e.target)) {
+      closeMenu();
+    }
+  });
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+      closeMenu();
+      toggle.focus();
+    }
   });
 
   // Copy email to clipboard with confirmation

@@ -37,33 +37,11 @@ body {
   transform: scale(1.05);
 }
 
-.menu-toggle {
-  display: none;
-  flex-direction: column;
-  cursor: pointer;
-  gap: 5px;
-}
-
-.menu-toggle div {
-  width: 25px;
-  height: 3px;
-  background: white;
-  border-radius: 2px;
-}
 @media (max-width: 880px) {
   .dropdown-menu {
-    display: none;
-    flex-direction: column;
-    background: #111;
-    position: absolute;
-    top: 100%;
-    right: 0;
     width: 100%;
+    right: 0;
     padding: 1em 0;
-  }
-
-  .dropdown-menu.show {
-    display: flex;
   }
 
   .menu-toggle {
@@ -159,7 +137,7 @@ input, textarea, button {
 }
 
 .menu-toggle {
-  display: flex;
+  display: none;
   flex-direction: column;
   gap: 5px;
   cursor: pointer;

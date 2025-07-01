@@ -20,7 +20,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
   
   // Attach the copyEmail function to the button for email copy
-  const copyButton = document.querySelector('button[onclick="copyEmail()"]');
+  const copyButton = document.getElementById('copy-email-btn');
   if (copyButton) {
     copyButton.addEventListener('click', copyEmail);
   }

@@ -7,6 +7,23 @@ document.addEventListener('DOMContentLoaded', () => {
     dropdown.classList.toggle('show');
   });
 
+  // Smooth scroll for in-page anchor links
+  const hashLinks = document.querySelectorAll('a[href^="#"]');
+  if (hashLinks.length > 0) {
+    hashLinks.forEach(link => {
+      link.addEventListener('click', event => {
+        const targetId = link.getAttribute('href');
+        if (targetId && targetId.length > 1) {
+          const target = document.querySelector(targetId);
+          if (target) {
+            event.preventDefault();
+            target.scrollIntoView({ behavior: 'smooth' });
+          }
+        }
+      });
+    });
+  }
+
   // Copy email to clipboard with confirmation
   function copyEmail() {
     const email = "info@scalesedge.com";
